@@ -39,6 +39,9 @@ class Unit:
             print("> 힘: {0}".format(self.power))
             print("> 방어력: {0}".format(self.defense))
 
+            if self.level == 2:
+                print("스킬을 배웠습니다.\n => 칼날 베기: 공격력 {0}".format("힘+30"))
+
 
 class Battle(Unit):
     def __init__(self, enemy):
