@@ -1,11 +1,13 @@
 class Unit:
-    def __init__(self, name, level, hp, mp, power, defense):
+    def __init__(self, name, level, hp, mp, power, defense, job, exp):
         self.name = name
         self.level = level
         self.hp = hp
         self.mp = mp
         self.power = power
         self.defense = defense
+        self.job = job
+        self.exp = exp
         
 
     def levelup(self):
@@ -14,6 +16,7 @@ class Unit:
         self.mp += 50
         self.power += 10
         self.defense += 5
+        self.exp = 0
         print("{0}이(가) 레벨업을 하였습니다.".format(self.name))
         print("--[{0}]: 현재 스탯 정보--".format(self.name))
         print("> Level: {0}".format(self.level))
@@ -23,13 +26,15 @@ class Unit:
         print("> 방어력: {0}".format(self.defense))
 
 class User(Unit):
-    def __init__(self, name, level, hp, mp, power, defense):
-        Unit.__init__(self, name, level, hp, mp, power, defense)
+    def __init__(self, name, level, hp, mp, power, defense, job, exp):
+        Unit.__init__(self, name, level, hp, mp, power, defense, job, exp)
         # level = 1
         # hp = 150
         # mp = 50
         # power = 30
         # defense = 5
+        # job = "무직"
+        # exp = 0
 
     def CreateUser(self):
         self.name = input("닉네임을 정하십시오. : ")
@@ -37,4 +42,6 @@ class User(Unit):
 class Job(Unit):
     def __init__(self, name, level, hp, mp, power, defense, job):
         Unit.__init__(self, name, level, hp, mp, power, defense)
-        self.job = job
+        self.job = False
+
+    # def get_job(self):
