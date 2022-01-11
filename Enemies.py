@@ -1,8 +1,11 @@
 from Unit import *
 
-Hydra_Lv1 = Unit("히드라", 1, 50, 0, 10, 5, "괴물", 100)
-Hydra_Lv2 = Unit("히드라", 2, 70, 0, 15, 10, "괴물", 100)
-Hydra_Lv3 = Unit("히드라", 3, 90, 0, 20, 15, "괴물", 100)
-Hydra_Lv4 = Unit("히드라", 4, 110, 0, 25, 20, "괴물", 100)
-Hydra_Lv5 = Unit("히드라", 5, 150, 0, 30, 25, "괴물", 100)
-Hydra_Lv6 = Unit("히드라", 6, 200, 0, 40, 30, "괴물", 100)
+# 히드라
+hydra_level = randint(1, 6)
+hydra_hp = randint(50, 70)
+hydra_mp = 0
+hydra_power = randint(10, 15)
+hydra_defense = randint(5, 8)
+hydra_job = "괴무르족"
+
+Hydra = Unit("히드라", hydra_level, hydra_hp, hydra_mp, hydra_power, hydra_defense, hydra_job, 100)

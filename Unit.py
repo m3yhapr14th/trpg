@@ -1,3 +1,5 @@
+from random import *
+
 class Unit:
     def __init__(self, name, level, hp, mp, power, defense, job, exp):
         self.name = name
@@ -17,6 +19,7 @@ class Unit:
         print("{0}: {1}에게 피해를 주었습니다. [공격력: {2}]".format(self.name, enemy, self.power))
 
     def damaged(self, damage):
+        damage -= int(self.defense)
         self.hp -= damage
         print("{0}: {1}의 피해를 받았습니다.".format(self.name, damage))
         print("{0}의 현재 체력: {1}".format(self.name, self.hp))
@@ -42,14 +45,17 @@ class Unit:
             if self.level == 2:
                 print("스킬을 배웠습니다.\n => 칼날 베기: 공격력 {0}".format("힘+30"))
 
+# class Skills(Unit):
+#     def __init__(self):
+        
 
-class Battle(Unit):
-    def __init__(self, enemy):
-        print("{0}와 전투를 시작합니다.".format(enemy))
+# class Battle(Unit):
+#     def __init__(self, enemy):
+#         print("{0}와 전투를 시작합니다.".format(enemy))
 
-    # def damaged(self, power):
-    #     self.hp -= power
-    #     print("{0}: {1}에게 피해를 받았습니다.".format(self.name, power))
+#     # def damaged(self, power):
+#     #     self.hp -= power
+#     #     print("{0}: {1}에게 피해를 받았습니다.".format(self.name, power))
         
 
 class Job(Unit):
