@@ -1,9 +1,4 @@
-from Unit import *
-from Enemies import *
-from func import *
-from Character import *
-from time import sleep
-from Battle import *
+from module import *
 
 game_start()
 
